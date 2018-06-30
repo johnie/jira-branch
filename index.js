@@ -1,24 +1,44 @@
 'use strict';
-const { shell } = require('execa');
+const execa = require('execa');
 
 // Regex
-const RE = /^(feature|hotfix|bugfix|release|custom)|((?!([A-Z0-9]{1,10})-?$)[A-Z]{1}[A-Z0-9]+-\d+)/g;
+const JIRA_REGEX = /^(feature|hotfix|bugfix|release|custom)|((?!([A-Z0-9]{1,10})-?$)[A-Z]{1}[A-Z0-9]+-\d+)/g;
 
 // Command
 const COMMAND = 'git rev-parse --abbrev-ref HEAD';
 
-(() => {
-	shell(COMMAND).then(({ stdout, stderr }) => {
-		if (stderr) {
-			console.log(stderr);
-			return;
-		}
+/**
+ * Extract JIRA data from branch name
+ * @param {String} branch git branch
+ * @returns {Object} branch info
+ */
+const extract = branch => {
+	if (JIRA_REGEX.test(branch)) {
+		const [type, ticket] = branch.match(JIRA_REGEX);
 
-		const [type, ticket] = stdout.match(RE);
-		console.log(type, ticket);
 		return {
+			branch,
 			type,
 			ticket
 		};
+	}
+};
+
+/**
+ * Get info from current repository
+ * @returns {Promise} extract branch info
+ */
+const run = () =>
+	new Promise((resolve, reject) => {
+		try {
+			execa.shell(COMMAND).then(({ stdout }) => resolve(extract(stdout)));
+		} catch (e) {
+			reject(e);
+		}
 	});
-})();
+
+module.exports = {
+	JIRA_REGEX,
+	extract,
+	run
+};

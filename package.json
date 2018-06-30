@@ -27,5 +27,13 @@
 	"devDependencies": {
 		"ava": "^0.25.0",
 		"xo": "^0.21.0"
+	},
+	"xo": {
+		"rules": {
+			"object-curly-spacing": [
+				2,
+				"always"
+			]
+		}
 	}
 }
