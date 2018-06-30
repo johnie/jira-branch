@@ -1,9 +1,9 @@
 {
-	"name": "jira-git",
+	"name": "jira-branch",
 	"version": "0.0.1",
 	"description": "Retrieve JIRA information from current branch",
 	"license": "MIT",
-	"repository": "johnie/jira-git",
+	"repository": "johnie/jira-branch",
 	"author": {
 		"name": "Johnie Hjelm",
 		"email": "j@hjelm.im",
