@@ -22,6 +22,12 @@ const extract = branch => {
 			ticket
 		};
 	}
+
+	return {
+		branch,
+		type: '',
+		ticket: ''
+	};
 };
 
 /**

@@ -2,7 +2,7 @@ import test from 'ava';
 import jiraBranch from '.';
 
 const branch = 'feature/XXX-1337-this-is-a-very-important-task';
-const fake = 'develop';
+const other = 'develop';
 
 const mockBranch = {
 	branch,
@@ -15,11 +15,19 @@ test('Should match regex', t => {
 });
 
 test('Should not match regex', t => {
-	t.notRegex(fake, jiraBranch.JIRA_REGEX);
+	t.notRegex(other, jiraBranch.JIRA_REGEX);
 });
 
 test('Should extract branch info', t => {
 	t.deepEqual(jiraBranch.extract(branch), mockBranch);
+});
+
+test('Should extract branch if no regex', t => {
+	t.deepEqual(jiraBranch.extract(other), {
+		branch: 'develop',
+		type: '',
+		ticket: ''
+	});
 });
 
 test('Should match every type', t => {
