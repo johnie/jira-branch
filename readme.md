@@ -1,4 +1,4 @@
-# jira-branch [![jire-branch](https://github.com/johnie/jire-branch/actions/workflows/master.yml/badge.svg?branch=master)](https://github.com/johnie/jire-branch/actions/workflows/master.yml)
+# jira-branch [![jira-branch](https://github.com/johnie/jira-branch/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/johnie/jira-branch/actions/workflows/main.yml)
 
 > Retrieve JIRA information from current branch
 
