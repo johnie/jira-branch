@@ -1,4 +1,4 @@
-# jira-branch [![Build Status](https://travis-ci.org/johnie/jira-branch.svg?branch=master)](https://travis-ci.org/johnie/jira-branch)
+# jira-branch [![jire-branch](https://github.com/johnie/jire-branch/actions/workflows/master.yml/badge.svg?branch=master)](https://github.com/johnie/jire-branch/actions/workflows/master.yml)
 
 > Retrieve JIRA information from current branch
 
@@ -36,7 +36,7 @@ jiraBranch.extract(branch);
 //   ticket: 'XXX-1337'
 // }
 
-jiraBranch.run().then(data => console.log(data));
+jiraBranch.run().then((data) => console.log(data));
 // => {
 //   branch: 'feature/XXX-1337-this-is-a-very-important-task',
 //   type: 'feature',
@@ -46,4 +46,4 @@ jiraBranch.run().then(data => console.log(data));
 
 ## License
 
-MIT © [Johnie Hjelm](https://jh.je)
+MIT © [Johnie Hjelm](https://johnie.se)
