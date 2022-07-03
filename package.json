@@ -1,39 +1,44 @@
 {
-	"name": "jira-branch",
-	"version": "1.0.1",
-	"description": "Retrieve JIRA information from current branch",
-	"license": "MIT",
-	"repository": "johnie/jira-branch",
-	"author": {
-		"name": "Johnie Hjelm",
-		"email": "j@hjelm.im",
-		"url": "https://jh.je"
-	},
-	"engines": {
-		"node": ">=6"
-	},
-	"scripts": {
-		"test": "xo && ava"
-	},
-	"files": [
-		"index.js"
-	],
-	"keywords": [
-		""
-	],
-	"dependencies": {
-		"execa": "^0.10.0"
-	},
-	"devDependencies": {
-		"ava": "^0.25.0",
-		"xo": "^0.21.1"
-	},
-	"xo": {
-		"rules": {
-			"object-curly-spacing": [
-				2,
-				"always"
-			]
-		}
-	}
+  "name": "jira-branch",
+  "version": "1.0.1",
+  "description": "Retrieve JIRA information from current branch",
+  "license": "MIT",
+  "repository": "johnie/jira-branch",
+  "author": {
+    "name": "Johnie Hjelm",
+    "email": "johnie@hjelm.im",
+    "url": "https://johnie.se"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "jira",
+    "branch",
+    "branch name"
+  ],
+  "dependencies": {
+    "execa": "^6.1.0"
+  },
+  "devDependencies": {
+    "ava": "^4.3.0",
+    "xo": "^0.50.0"
+  },
+  "xo": {
+    "space": true,
+    "rules": {
+      "arrow-parens": "off",
+      "comma-dangle": "off",
+      "object-curly-spacing": "off",
+      "operator-linebreak": "off",
+      "unicorn/better-regex": "off"
+    }
+  }
 }
